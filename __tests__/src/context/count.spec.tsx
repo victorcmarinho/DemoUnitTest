@@ -5,13 +5,13 @@ import {
   RenderOptions,
 } from '@testing-library/react-native';
 import React from 'react';
-import { Text } from 'react-native';
-import { act } from 'react-test-renderer';
-import { CountProvider, useCount } from '../../../src/context/count';
-import { Button } from '../../../src/Pages/Home/styles';
+import {Text} from 'react-native';
+import {act} from 'react-test-renderer';
+import {CountProvider, useCount} from '../../../src/context/count';
+import {Button} from '../../../src/Pages/Home/styles';
 
 const TestComponent: React.FC = () => {
-  const { count, increment, decrement } = useCount();
+  const {count, increment, decrement} = useCount();
 
   return (
     <>
@@ -44,7 +44,7 @@ describe('Count Context', () => {
   });
 
   it('Should be able execute incremente', () => {
-    const { getByTestId, findByDisplayValue } = renderComponent();
+    const {getByTestId, findByDisplayValue} = renderComponent();
     const incrementButton = getByTestId('increment');
     expect(findByDisplayValue('0')).toBeTruthy();
     act(() => {
@@ -58,12 +58,12 @@ describe('Count Context', () => {
   });
 
   it('Should be able execute decrement', () => {
-    const { getByTestId, findByDisplayValue } = renderComponent();
+    const {getByTestId, findByDisplayValue} = renderComponent();
     const incrementButton = getByTestId('decrement');
     expect(findByDisplayValue('0')).toBeTruthy();
     act(() => {
       fireEvent.press(incrementButton);
-      fireEvent.changeText
+      fireEvent.changeText;
     });
     expect(findByDisplayValue('-1')).toBeTruthy();
     act(() => {

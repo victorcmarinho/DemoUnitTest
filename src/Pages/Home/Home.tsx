@@ -1,5 +1,5 @@
-import React, { FC, memo } from 'react';
-import { useCount } from '../../context/count';
+import React, {FC, memo} from 'react';
+import {useCount} from '../../context/count';
 import {
   ButtonsContainer,
   Button,
@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 export const Home: FC = memo(() => {
-  const { decrement, increment, count } = useCount();
+  const {decrement, increment, count} = useCount();
   return (
     <Container>
       <TextContainer>
@@ -23,8 +23,7 @@ export const Home: FC = memo(() => {
         <Button
           testID="remove-button"
           onPress={() => decrement()}
-          title="Remove"
-        >
+          title="Remove">
           Remove
         </Button>
       </ButtonsContainer>
