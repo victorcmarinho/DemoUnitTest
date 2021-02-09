@@ -14,19 +14,19 @@ interface ICountContextData {
 
 const CountContext = createContext<ICountContextData>({} as ICountContextData);
 
-const CountProvider: FC = ({children}) => {
+const CountProvider: FC = ({ children }) => {
   const [count, setCount] = useState(0);
 
   const increment = useCallback(() => {
-    setCount((e) => e + 1);
+    setCount(e => e + 1);
   }, []);
 
   const decrement = useCallback(() => {
-    setCount((e) => e - 1);
+    setCount(e => e - 1);
   }, []);
 
   return (
-    <CountContext.Provider value={{increment, decrement, count}}>
+    <CountContext.Provider value={{ increment, decrement, count }}>
       {children}
     </CountContext.Provider>
   );
@@ -36,4 +36,4 @@ const useCount = (): ICountContextData => {
   return useContext(CountContext);
 };
 
-export {useCount, CountProvider};
+export { useCount, CountProvider };

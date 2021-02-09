@@ -1,7 +1,7 @@
 import React from 'react';
-import {Home} from '../../../src/Pages/Home';
-import {fireEvent, render} from '@testing-library/react-native';
-import {act} from 'react-test-renderer';
+import { Home } from '../../../src/Pages/Home';
+import { fireEvent, render } from '@testing-library/react-native';
+import { act } from 'react-test-renderer';
 
 import * as countHook from '../../../src/context/count';
 
@@ -23,7 +23,7 @@ describe('<Home/>', () => {
   });
 
   it('Should be able press add button', () => {
-    const {getByTestId} = render(<Home />);
+    const { getByTestId } = render(<Home />);
     const button = getByTestId('add-button');
 
     act(() => {
@@ -34,7 +34,7 @@ describe('<Home/>', () => {
   });
 
   it('Should be able press remove button', () => {
-    const {getByTestId} = render(<Home />);
+    const { getByTestId } = render(<Home />);
     const button = getByTestId('remove-button');
 
     act(() => {
