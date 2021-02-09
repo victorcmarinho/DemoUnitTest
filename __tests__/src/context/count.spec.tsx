@@ -9,6 +9,7 @@ import { Text } from 'react-native';
 import { act } from 'react-test-renderer';
 import { CountProvider, useCount } from '../../../src/context/count';
 import { Button } from '../../../src/Pages/Home/styles';
+jest.useFakeTimers();
 
 const TestComponent: React.FC = () => {
   const { count, increment, decrement } = useCount();
