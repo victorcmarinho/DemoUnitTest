@@ -24,3 +24,10 @@ export const ButtonsContainer = styled.View`
 `;
 
 export const Button = styled.Button``;
+
+export const Input = styled.TextInput`
+  background-color: #22223b;
+  border-radius: 4px;
+  margin-top: 15px;
+  color: #fff;
+`;

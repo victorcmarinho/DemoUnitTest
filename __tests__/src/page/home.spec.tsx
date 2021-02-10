@@ -43,4 +43,14 @@ describe('<Home/>', () => {
 
     expect(decrement).toBeCalled();
   });
+
+  it('Should be able insert input value', () => {
+    const { getByTestId } = render(<Home />);
+    const input = getByTestId('input');
+
+    act(() => {
+      fireEvent.changeText(input, '77788899911');
+    });
+    expect(input.props.value).toBe('777.888.999-11');
+  });
 });

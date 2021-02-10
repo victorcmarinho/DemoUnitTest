@@ -1,4 +1,5 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
+
 import { useCount } from '../../context/count';
 import {
   ButtonsContainer,
@@ -6,10 +7,12 @@ import {
   Container,
   Text,
   TextContainer,
+  Input,
 } from './styles';
 
 export const Home: FC = memo(() => {
   const { decrement, increment, count } = useCount();
+  const [text, setText] = useState('');
   return (
     <Container>
       <TextContainer>
@@ -28,6 +31,27 @@ export const Home: FC = memo(() => {
           Remove
         </Button>
       </ButtonsContainer>
+
+      <TextContainer>
+        <Text>{text}</Text>
+      </TextContainer>
+
+      <Input
+        testID="input"
+        value={text}
+        maxLength={14}
+        onChangeText={e =>
+          setText(
+            e
+              .replace(/\D/g, '')
+              .replace(/(\d{3})(\d)/, '$1.$2')
+              .replace(/(\d{3})(\d)/, '$1.$2')
+              .replace(/(\d{3})(\d)/, '$1-$2'),
+          )
+        }
+      />
     </Container>
   );
 });
+
+Home.displayName = 'Home';
